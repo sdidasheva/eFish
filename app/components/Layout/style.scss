@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.section {
+	float: right;
+	background-color: $white-color;
+	width: 65%;
+	margin: 35px 130px 150px 30px;
+
+	&__wrapper {
+		padding: 45px;
+	}
+}

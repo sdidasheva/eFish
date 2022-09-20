@@ -1,0 +1,243 @@
+@import "../../styles/variables.scss";
+
+.users-table {
+	float: right;
+	background-color: $white-color;
+	width: 65%;
+	margin: 35px 130px 150px 30px;
+	&__container {
+		padding: 45px 45px 70px 45px;
+	}
+	&__inputs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		&-find {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+			&-search {
+				border: 1px solid #d3e7fb;
+				border-radius: 5px;
+				padding: 7px 20px 7px 20px;
+				width: 30vw;
+				display: flex;
+				justify-content: space-between;
+				input {
+					border: none;
+					outline: none;
+					width: 100%;
+				}
+			}
+		}
+		&-button {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 17px;
+			color: #ffffff;
+			padding: 15px 30px;
+			background-color: $secondary-color;
+			border-radius: 100px;
+			border: none;
+			vertical-align: middle;
+			white-space: nowrap;
+			svg {
+				margin-left: 10px;
+			}
+		}
+	}
+	&__table {
+		height: 100%;
+		width: 100%;
+		margin-top: 35px;
+		thead {
+			background: #f7fbff;
+			border-radius: 10px;
+			// padding: 12px 20px;
+			// border-spacing: 12px;
+
+			tr {
+				th {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 15px;
+					text-transform: uppercase;
+					padding: 12px 20px;
+					&:first-child {
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+						text-align: center;
+					}
+					&:last-child {
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+					}
+				}
+			}
+		}
+		tbody {
+			tr {
+				width: 100%;
+				td {
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 17px;
+					padding: 12px 20px;
+					&:first-child {
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+						text-align: center;
+					}
+					&:last-child {
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+						text-align: center;
+					}
+					&:nth-child(3) {
+						padding-left: 5%;
+					}
+					svg {
+						cursor: pointer;
+					}
+				}
+				&:nth-child(even) {
+					background: #fbfbfb;
+				}
+			}
+		}
+		&-status {
+			&--active {
+				color: #5abb5e;
+			}
+		}
+		&-action-tooltip {
+			position: relative;
+			&-text {
+				position: absolute;
+				visibility: hidden;
+				background-color: $primary-color;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 15px;
+				color: #fff;
+				text-align: center;
+				border-radius: 10px;
+				padding: 5px 15px;
+				z-index: 2;
+				top: -30px;
+			}
+			&:hover &-text {
+				visibility: visible;
+			}
+		}
+		&-active {
+			color: $button-color;
+		}
+		&-inactive {
+			color: grey;
+		}
+		&-blocked {
+			color: #f19797;
+		}
+	}
+	&__pagination {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		margin: 30px 0;
+		&-per-page {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			cursor: pointer;
+			&-dropdown {
+				position: absolute;
+				top: 20px;
+				width: 100%;
+				list-style: none;
+				border: 1px solid #d3e7fb;
+				border-radius: 5px;
+				padding: 5px 10px 5px 2px;
+				box-shadow: 0px 8px 50px rgba(210, 232, 254, 0.4);
+				animation-name: dropdown;
+				animation-duration: 0.3s;
+				animation-timing-function: ease;
+				li {
+					white-space: nowrap;
+					text-align: left;
+					padding-bottom: 5px;
+					cursor: pointer;
+				}
+			}
+		}
+		&-navigation {
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			&-arrows {
+				cursor: pointer;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				margin-top: -2px;
+				button {
+					background-color: $white-color;
+					border: none;
+					color: none;
+				}
+			}
+		}
+	}
+}
+
+.css-b62m3t-container {
+	width: 15vw !important;
+}
+.custom-select {
+	&__control {
+		border: 1px solid #d3e7fb !important;
+		border-radius: 5px !important;
+	}
+	&__placeholder {
+		font-weight: 400 !important;
+		font-size: 14px !important;
+		line-height: 17px !important;
+		color: #0a091d !important;
+		padding: 10px 0 11px 20px !important;
+	}
+	&__indicator-separator {
+		display: none;
+	}
+	&__indicator {
+		padding-right: 26px !important;
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: none;
+			stroke-width: 1.5;
+			stroke: $secondary-color;
+			path {
+				d: path("M6 9L12 15L18 9");
+			}
+		}
+	}
+}
+
+@keyframes dropdown {
+	0% {
+		top: 50%;
+	}
+	50% {
+		border-radius: 0%;
+	}
+	100% {
+		top: 100%;
+	}
+}

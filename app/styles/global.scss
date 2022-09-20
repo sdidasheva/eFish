@@ -1,0 +1,22 @@
+@import "./main.scss";
+@import "./variables.scss";
+
+body {
+	overflow-x: hidden !important;
+	font-family: $main-font !important;
+	color: $primary-color !important;
+	// background-color: $background-color !important;
+	background: $background-color url("/assests/images/wave.png") bottom/100% auto
+		no-repeat !important;
+	height: 100vh !important;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	border-left: 4px solid $secondary-color;
+	padding-left: 13px;
+	margin-bottom: 50px;
+}
