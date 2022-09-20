@@ -86,17 +86,9 @@ const EditUser = ({ userInfo, id }) => {
 								render={({ field: { onChange, onBlur, value, ref } }) => (
 									<>
 										<Select
-											// defaultValue={options.filter((item) =>
-											// 	selectedOption
-											// 		? selectedOption === item.value
-											// 		: value === item.value
-											// )}
-											// onChange={(item) => {
-											// 	setSelectedOption(onChange(item.value));
-											// }}
 											defaultValue={options.filter((item) =>
 												selectedOption
-													? selectedOption === value
+													? selectedOption === item.value
 													: value === item.value
 											)}
 											onChange={(item) => {
